@@ -11,8 +11,10 @@ public class Vjezba1 {
 		int drugiBroj = Integer.parseInt(JOptionPane.showInputDialog("Unesi drugi broj"));
 
 		int rezultat = prviBroj + drugiBroj;
-
+		
 		System.out.println(rezultat);
+
+
 
 	}
 
