@@ -61,6 +61,15 @@ public class Vjezba0 {
 
 		System.out.println(rezultat);
 
+		int u = Integer.MAX_VALUE;
+		System.out.println(u + 1);
+
+		t = 5;
+
+		t += 5;
+
+		System.out.println(t);
+
 	}
 
 }
