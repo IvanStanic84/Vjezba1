@@ -20,6 +20,17 @@ public class Vjezba0 {
 
 		System.out.println(q);
 
+		boolean aktivan = true;
+		byte maliBroj = -25;
+		short maloVeciBroj = 589;
+		int integer = 2656;
+		long velikiBroj = 33333;
+		float manjiDecimalni = 3.14f;
+		double velikiDecimalniBroj = 3.14;
+		char znak = 't';
+		
+		
+
 	}
 
 }
