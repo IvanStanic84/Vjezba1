@@ -1,5 +1,7 @@
 package vjezba;
 
+import javax.swing.JOptionPane;
+
 public class Vjezba0 {
 
 	public static void main(String[] args) {
@@ -32,7 +34,7 @@ public class Vjezba0 {
 		int p = 4, j = 8;
 
 		int o = p + j;
-		
+
 		System.out.println(o);
 		System.out.println(p + j);
 
@@ -50,6 +52,14 @@ public class Vjezba0 {
 		System.out.println(10 / 3);
 
 		System.out.println(10 % 3);
+
+		int prviBroj = Integer.parseInt(JOptionPane.showInputDialog("Unesi prvi broj"));
+
+		int drugiBroj = Integer.parseInt(JOptionPane.showInputDialog("Unesi drugi broj"));
+
+		int rezultat = prviBroj + drugiBroj;
+
+		System.out.println(rezultat);
 
 	}
 
