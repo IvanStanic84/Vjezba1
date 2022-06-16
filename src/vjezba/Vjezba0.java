@@ -28,8 +28,28 @@ public class Vjezba0 {
 		float manjiDecimalni = 3.14f;
 		double velikiDecimalniBroj = 3.14;
 		char znak = 't';
+
+		int p = 4, j = 8;
+
+		int o = p + j;
 		
-		
+		System.out.println(o);
+		System.out.println(p + j);
+
+		z = i - j;
+		z = i * j;
+		z = i / j;
+		System.out.println(z);
+
+		float rez = i / j;
+		System.out.println(rez);
+
+		rez = (float) i / j;
+		System.out.println(rez);
+
+		System.out.println(10 / 3);
+
+		System.out.println(10 % 3);
 
 	}
 
