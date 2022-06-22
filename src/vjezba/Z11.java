@@ -6,10 +6,10 @@ public class Z11 {
 
 	public static void main(String[] args) {
 
-		int i;
+		
 
 		for (;;) {
-			i = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj izmeðu 10 i 20"));
+			int i = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj izmeðu 10 i 20"));
 			if (i < 10 || i > 20) {
 				break;
 			}
