@@ -15,7 +15,7 @@ public class Z01 {
 
 		int i = 0;
 
-		while (i < 12) {
+		while (i < niz.length) {
 
 			niz[i] = 3.14;
 
