@@ -6,7 +6,7 @@ public class Z04 {
 
 	public static void main(String[] args) {
 
-		// ispiši zbroj zvih znamenki
+		// ispiši zbroj svih znamenki
 		// ulaz: 263736
 		// izlaz: 27
 		// ulaz: 26
