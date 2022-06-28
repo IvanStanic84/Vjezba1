@@ -16,11 +16,11 @@ public class Z02 {
 		int suma = 0;
 		while (i != -1) {
 			i = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj"));
-			
-			suma+=i;
-			
+
+			suma += i;
+
 		}
-		System.out.println(suma+1);
-	
+		System.out.println(suma + 1);
+
 	}
 }
