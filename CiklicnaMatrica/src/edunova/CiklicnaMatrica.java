@@ -26,7 +26,7 @@ public class CiklicnaMatrica {
 
 				System.out.println(Arrays.toString(matrica[x]));
 			}
-		}
 
+		}
 	}
 }
