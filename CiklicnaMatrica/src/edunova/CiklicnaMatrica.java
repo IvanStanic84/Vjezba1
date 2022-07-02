@@ -1,6 +1,5 @@
 package edunova;
 
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class CiklicnaMatrica {
@@ -55,6 +54,7 @@ public class CiklicnaMatrica {
 					smjer = 'L';
 					stupac--;
 					lijevo++;
+					gore++;
 					desno--;
 					dolje--;
 				} else {
