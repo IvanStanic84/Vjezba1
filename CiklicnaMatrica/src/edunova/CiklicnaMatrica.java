@@ -1,7 +1,6 @@
 package edunova;
 
 import java.util.Arrays;
-
 import javax.swing.JOptionPane;
 
 public class CiklicnaMatrica {
@@ -13,20 +12,68 @@ public class CiklicnaMatrica {
 
 		int[][] matrica = new int[i][j];
 
-		int min = (i - 1) * (j - 1);
+		int umnozak = i * j;
 
-		for (int x = i - 1; i > 0; i--) {
+		int pocetnibroj = 1;
+		int redak = i - 1;
+		int stupac = j - 1;
 
-			for (int y = j - 1; j > 0; j--) {
+		int lijevo = 0;
+		int gore = 0;
+		int desno = j - 1;
+		int dolje = i - 2;
+		char smjer = 'L';
 
-				matrica[x][y] = (int) ((Math.multiplyExact(x + 1, y + 1)));
+		while (umnozak > 0) {
+			matrica[redak][stupac] = pocetnibroj;
+			umnozak--;
+			pocetnibroj++;
 
-			}
-			for (i = matrica.length - 1; i >= 0; --i) {
-
-				System.out.println(Arrays.toString(matrica[x]));
+			if (smjer == 'L') {
+				if (stupac == lijevo) {
+					smjer = 'U';
+					redak--;
+				} else {
+					stupac--;
+				}
+			} else if (smjer == 'U') {
+				if (redak == gore) {
+					smjer = 'R';
+					stupac++;
+				} else {
+					redak--;
+				}
+			} else if (smjer == 'R') {
+				if (stupac == desno) {
+					smjer = 'D';
+					redak++;
+				} else {
+					stupac++;
+				}
+			} else if (smjer == 'D') {
+				if (redak == dolje) {
+					smjer = 'L';
+					stupac--;
+					lijevo++;
+					desno--;
+					dolje--;
+				} else {
+					redak++;
+				}
 			}
 
 		}
+
+		for (int k = 0; k < matrica.length; k++) {
+
+			for (int l = 0; l < matrica[k].length; l++) {
+
+				System.out.printf("%5d", matrica[k][l]);
+
+			}
+			System.out.println();
+		}
+
 	}
+
 }
