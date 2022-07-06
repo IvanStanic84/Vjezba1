@@ -22,7 +22,32 @@ public class LjubavniKalkulator {
 			System.out.print(k + " ");
 
 		}
+		System.out.println();
+		k = 0;
+
+		if (ime12.length() % 2 == 0) {
+			for (int i = 0; i < ime12.length() / 2; i++) {
+				int prvibroj = niz[i];
+				int drugibroj = niz[ime12.length() - 1 - i];
+				int rezultat = prvibroj + drugibroj;
+				System.out.print(rezultat + " ");
+
+			}
+		} else {
+			for (int i = 0; i < ime12.length() / 2; i++) {
+				int prvibroj = niz[i];
+				int drugibroj = niz[ime12.length() - 1 - i];
+
+				int srednjibroj = niz[ime12.length() / 2 + 1];
+				int rezultat = prvibroj + drugibroj;
+				System.out.print(rezultat + " ");
+
+				System.out.print(srednjibroj);
+
+			}
+
+		}
 
 	}
-
+	// }
 }
