@@ -1,5 +1,5 @@
 package edunova;
 
-public class OsobaImplementacija {
+public class OsobaImplementacija extends Osoba {
 
 }
