@@ -23,4 +23,4 @@ public class LoveCalculator {
 
         return recursivelyCalculateLovePercent(newLetterValues.toString());
     }
-
+}
