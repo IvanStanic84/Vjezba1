@@ -23,8 +23,31 @@ public class LjubavniKalkulator {
 		}
 		System.out.println();
 		k = 0;
+	}
+		
 
-		for (k = ime12.length() / 2; k > 2; k--) {
+
+	    private int recursivelyCalculateLovePercent(final String letterValues) {
+	        if (letterValues.length() <= 2) {
+	            return Integer.parseInt(letterValues);
+	        }
+
+	        StringBuilder newLetterValues = new StringBuilder();
+	        final String[] letterArrayValues = letterValues.split("");
+	        for (int i = 0, j = letterArrayValues.length - 1; i <= j; i++, j--) {
+	            if (i == j) {
+	                newLetterValues.append(letterArrayValues[i]);
+	                break;
+	            }
+	            newLetterValues.append(Integer.parseInt(letterArrayValues[i]) + Integer.parseInt(letterArrayValues[j]));
+	        }
+
+	        return recursivelyCalculateLovePercent(newLetterValues.toString());
+	    }}
+
+	    
+	    
+		/*for (k = ime12.length() / 2; k > 2; k--) {
 
 			if (ime12.length() % 2 == 0) {
 				for (int i = 0; i < ime12.length() / 2; i++) {
@@ -51,4 +74,4 @@ public class LjubavniKalkulator {
 		}
 	}
 
-}
+}*/
