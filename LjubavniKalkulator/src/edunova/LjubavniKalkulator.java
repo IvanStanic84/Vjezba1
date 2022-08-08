@@ -1,7 +1,6 @@
 package edunova;
 
 public class LjubavniKalkulator {
-
 	public static void main(String[] args) {
 
 		String ime1 = "Marta";
@@ -24,7 +23,6 @@ public class LjubavniKalkulator {
 		}
 		System.out.println();
 		k = 0;
-
 
 		for (k = ime12.length() / 2; k > 2; k--) {
 

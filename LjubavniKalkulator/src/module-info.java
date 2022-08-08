@@ -1,4 +1,3 @@
 module ljubavniKalkulator {
-	requires java.desktop;
-
+	exports edunova;
 }
