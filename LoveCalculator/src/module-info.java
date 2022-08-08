@@ -1,0 +1,2 @@
+module loveCalculator {
+}
