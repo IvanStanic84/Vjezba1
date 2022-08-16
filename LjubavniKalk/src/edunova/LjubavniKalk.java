@@ -1,7 +1,6 @@
 package edunova;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LjubavniKalk {
@@ -35,12 +34,12 @@ public class LjubavniKalk {
 		}
 		System.out.println("\n");
 		System.out.println(arrayList);
-		
+
 		////////////////////////////////////////////////////
-		
+
 		int result = calc(arrayList);
 		System.out.println(result);
-		
+
 	}
 
 	private static Integer calc(List<Integer> arrayList) {
@@ -64,19 +63,40 @@ public class LjubavniKalk {
 		if (isOdd) {
 			arrayList.add(p / 2, 0);
 		}
-		
+
 		System.out.println(arrayList);
+		
+		for (int i = 0; i < p; i++) {
+
+			int k = arrayList.get(i);
+
+			if (k > 9) {
+				k = k % 10;
+				arrayList.set(i - 1, arrayList.get(p - i - z1) + 1);
+			}
+		
+		}
+		
 
 		for (int i = 0; i < stop; i++) {
-			
+
+			int k2 = arrayList.get(p - i - z1);
+
+			if (k2 > 9) {
+				k2 = k2 % 10;
+				arrayList.set(i - 1, arrayList.get(p - i - z1) + 1);
+			}
 			int k1 = arrayList.get(i);
-			int k2 = arrayList.get(p - i - z1); // preglededaj i ovo ?!
+			if (k1 > 9) {
+				k1 = k1 % 10;
+				arrayList.set(i - 1, arrayList.get(i - 1) + 1);
+			}
+
 			System.out.println("k1=" + k1 + " , " + "k2=" + k2);
-			
 			int k = k1 + k2;
 			kList.add(k);
 		}
-		
+
 		System.out.println("kList=" + kList);
 		System.out.println("----------------------------");
 
