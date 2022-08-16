@@ -20,13 +20,13 @@ public class LjubavniKalkulator {
 			niz[i] = k;
 			String str1 = String.valueOf(k + " ");
 			System.out.print(str1);
-				
-		}System.out.println();
-		
-		
+
+		}
+		System.out.println();
+
 		if (ime12.length() <= 2) {
 			System.out.println(ime12);
-			//return Integer.parseInt(ime12);
+			// return Integer.parseInt(ime12);
 		}
 
 		StringBuilder newime12 = new StringBuilder();
@@ -37,32 +37,26 @@ public class LjubavniKalkulator {
 				break;
 			}
 			newime12.append(Integer.parseInt(novoime12[i]) + Integer.parseInt(novoime12[j]));
-		System.out.println();
-		System.out.println();
-		
-	}}}
+			System.out.println();
+			System.out.println();
 
-	/*private int rekurzija(final String ime12) {
-		if (ime12.length() <= 2) {
-			return Integer.parseInt(ime12);
 		}
-
-		StringBuilder newime12 = new StringBuilder();
-		final String[] novoime12 = ime12.split("");
-		for (int i = 0, j = novoime12.length - 1; i <= j; i++, j--) {
-			if (i == j) {
-				newime12.append(novoime12[i]);
-				break;
-			}
-			newime12.append(Integer.parseInt(novoime12[i]) + Integer.parseInt(novoime12[j]));
-		}
-
-		return rekurzija(novoime12.toString());
 	}
 }
 
 /*
- * for (k = ime12.length() / 2; k > 2; k--) {
+ * private int rekurzija(final String ime12) { if (ime12.length() <= 2) { return
+ * Integer.parseInt(ime12); }
+ * 
+ * StringBuilder newime12 = new StringBuilder(); final String[] novoime12 =
+ * ime12.split(""); for (int i = 0, j = novoime12.length - 1; i <= j; i++, j--)
+ * { if (i == j) { newime12.append(novoime12[i]); break; }
+ * newime12.append(Integer.parseInt(novoime12[i]) +
+ * Integer.parseInt(novoime12[j])); }
+ * 
+ * return rekurzija(novoime12.toString()); } }
+ * 
+ * /* for (k = ime12.length() / 2; k > 2; k--) {
  * 
  * if (ime12.length() % 2 == 0) { for (int i = 0; i < ime12.length() / 2; i++) {
  * int prvibroj = niz[i]; int drugibroj = niz[ime12.length() - 1 - i]; int
