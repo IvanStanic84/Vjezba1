@@ -1,3 +1,3 @@
-module loveCalculator {
+module ljubavniKalk {
 	requires java.desktop;
 }
