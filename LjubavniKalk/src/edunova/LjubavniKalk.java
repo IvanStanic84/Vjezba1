@@ -3,12 +3,14 @@ package edunova;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class LjubavniKalk {
 
 	public static void main(String[] args) {
 
-		String ime1 = "Marta";
-		String ime2 = "Manuel";
+		String ime1 = "marta";//JOptionPane.showInputDialog("Unesi prvo ime");
+		String ime2 = "manuel";//JOptionPane.showInputDialog("Unesi drugo ime");
 		String ime12 = ime1 + ime2;
 
 		int k = 0;
@@ -32,7 +34,7 @@ public class LjubavniKalk {
 		for (int i : niz) {
 			arrayList.add(Integer.valueOf(i));
 		}
-		System.out.println("\n");
+		System.out.println();
 		System.out.println(arrayList);
 
 		////////////////////////////////////////////////////
@@ -65,7 +67,7 @@ public class LjubavniKalk {
 		}
 
 		System.out.println(arrayList);
-		
+
 		for (int i = 0; i < p; i++) {
 
 			int k = arrayList.get(i);
@@ -74,9 +76,8 @@ public class LjubavniKalk {
 				k = k % 10;
 				arrayList.set(i - 1, arrayList.get(p - i - z1) + 1);
 			}
-		
+
 		}
-		
 
 		for (int i = 0; i < stop; i++) {
 
