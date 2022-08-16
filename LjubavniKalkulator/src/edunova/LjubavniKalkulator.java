@@ -3,8 +3,8 @@ package edunova;
 public class LjubavniKalkulator {
 	public static void main(String[] args) {
 
-		String ime1 = "Marta";
-		String ime2 = "Manuel";
+		String ime1 = "marta";
+		String ime2 = "manuel";
 		String ime12 = ime1 + ime2;
 
 		int k = 0;
@@ -18,10 +18,12 @@ public class LjubavniKalkulator {
 				}
 			}
 			niz[i] = k;
-			System.out.print(k + " ");
-			k = 0;
-
-		}
+			String str1 = String.valueOf(k + " ");
+			System.out.print(str1);
+				
+		}System.out.println();
+		
+		
 		if (ime12.length() <= 2) {
 			System.out.println(ime12);
 			//return Integer.parseInt(ime12);
