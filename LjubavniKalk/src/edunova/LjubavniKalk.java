@@ -9,8 +9,30 @@ public class LjubavniKalk {
 
 	public static void main(String[] args) {
 
-		String ime1 = JOptionPane.showInputDialog("Unesi prvo ime");
-		String ime2 = JOptionPane.showInputDialog("Unesi drugo ime");
+		String ime1;
+		while (true) {
+
+			ime1 = JOptionPane.showInputDialog("Unesi prvo ime");
+
+			if (ime1.trim().equals("")) {
+				JOptionPane.showMessageDialog(null, "Obavezan unos prvog imena");
+			} else {
+				break;
+			}
+		}
+
+		String ime2;
+
+		while (true) {
+
+			ime2 = JOptionPane.showInputDialog("Unesi drugo ime");
+
+			if (ime2.trim().equals("")) {
+				JOptionPane.showMessageDialog(null, "Obavezan unos drugog imena");
+			} else {
+				break;
+			}
+		}
 		String ime12 = ime1 + ime2;
 
 		int k = 0;
@@ -40,7 +62,8 @@ public class LjubavniKalk {
 		////////////////////////////////////////////////////
 
 		int result = calc(arrayList);
-		System.out.println(result);
+		JOptionPane.showMessageDialog(null, ime1 + " i " + ime2 + " vole se " + result + " % ");
+		//System.out.println(result);
 
 	}
 
