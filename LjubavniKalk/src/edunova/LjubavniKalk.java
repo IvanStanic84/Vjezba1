@@ -47,13 +47,15 @@ public class LjubavniKalk {
 	private static Integer calc(List<Integer> arrayList) {
 
 		int t = arrayList.size();
+
 		for (int z = 0; z < t; z++) {
 
 			int w = arrayList.get(z);
 			if (w > 9) {
-				
-				arrayList.add(z - 2, 1);
-				arrayList.set(z - 1, w % 10);
+
+				arrayList.add(z - 1, 1);
+				arrayList.set(z, w % 10);
+				return z;
 
 			}
 
