@@ -33,7 +33,8 @@ public class LjubavniKalk {
 				break;
 			}
 		}
-		String ime12 = ime1 + ime2;
+		String ime12 = ime1.trim().toLowerCase().replaceAll("\\s", "")
+				+ ime2.trim().toLowerCase().replaceAll("\\s", "");
 
 		int k = 0;
 		int[] niz = new int[ime12.length()];
@@ -62,8 +63,8 @@ public class LjubavniKalk {
 		////////////////////////////////////////////////////
 
 		int result = calc(arrayList);
+		System.out.println(result + "%");
 		JOptionPane.showMessageDialog(null, ime1 + " i " + ime2 + " vole se " + result + " % ");
-		//System.out.println(result);
 
 	}
 
