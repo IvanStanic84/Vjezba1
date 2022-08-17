@@ -9,8 +9,8 @@ public class LjubavniKalk {
 
 	public static void main(String[] args) {
 
-		String ime1 = "marta";// JOptionPane.showInputDialog("Unesi prvo ime");
-		String ime2 = "manuel";// JOptionPane.showInputDialog("Unesi drugo ime");
+		String ime1 = JOptionPane.showInputDialog("Unesi prvo ime");
+		String ime2 = JOptionPane.showInputDialog("Unesi drugo ime");
 		String ime12 = ime1 + ime2;
 
 		int k = 0;
@@ -48,18 +48,16 @@ public class LjubavniKalk {
 
 		int t = arrayList.size();
 
-		for (int z = 0; z < t; z++) {
+		for (int x = 0; x < t; x++) {
 
-			int w = arrayList.get(z);
+			int w = arrayList.get(x);
+
 			if (w > 9) {
 
-				arrayList.add(z - 1, 1);
-				arrayList.set(z, w % 10);
-				return z;
+				arrayList.add(x, 1);
+				arrayList.set(x + 1, w % 10);
 
 			}
-
-			System.out.println(w);
 
 		}
 
