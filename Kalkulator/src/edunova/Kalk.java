@@ -1,82 +1,90 @@
 package edunova;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class Kalk {
-
 	public static void main(String[] args) {
 
-		String ime1 = JOptionPane.showInputDialog("Unesi  prvo ime");
-		String ime2 = JOptionPane.showInputDialog("Unesi drugo ime");
+		String ime1 = "marta";// JOptionPane.showInputDialog("Unesi prvo ime");
+		String ime2 = "manuel";// JOptionPane.showInputDialog("Unesi drugo ime");
+		String ime12 = ime1 + ime2;
 
-		String zbroj = ime1.toLowerCase().trim() + ime2.toLowerCase().trim();
-
-		int[] niz = new int[zbroj.length()];
-
-		char count;
-
-		for (int i = 0; i < zbroj.length(); i++) {
-			count = 0;
-			for (int j = 0; j < zbroj.length(); j++) {
-				if (zbroj.charAt(i) == zbroj.charAt(j)) {
-					count++;
+		int k = 0;
+		int[] niz = new int[ime12.length()];
+		System.out.println(ime1 + "   " + ime2);
+		for (int i = 0; i < ime12.length(); i++) {
+			k = 0;
+			for (int j = 0; j < ime12.length(); j++) {
+				if (ime12.charAt(i) == ime12.charAt(j)) {
+					k++;
 				}
 			}
-			niz[i] = count;
+			niz[i] = k;
+			System.out.print(k + " ");
+			k = 0;
 		}
+		/////////////////////////////////////////////////////
 
-		System.out.println(Arrays.toString(niz));
+		List<Integer> arrayList = new ArrayList<>(niz.length);
+
+		for (int i : niz) {
+			arrayList.add(Integer.valueOf(i));
+		}
+		System.out.println();
+		System.out.println(arrayList);
+
+		////////////////////////////////////////////////////
+
+		int result = calc(arrayList);
+		System.out.println(result);
 
 	}
 
-	public String countChars(String ime1, String ime2) {
-		String combinedString = ime1 + ime2;
+	private static Integer calc(List<Integer> arrayList) {
+	
+		List<Integer> kList = new ArrayList<>();
+		int p = arrayList.size();
 
-		String strAllChars = "";
-		String strCount = "";
-		for (char c1 : combinedString.toCharArray()) {
-			if (strAllChars.indexOf(c1) < 0) {
-				int count = 0;
-				for (char c2 : combinedString.toCharArray()) {
-					if (c1 == c2) {
-						count = count + 1;
-					}
-				}
-
-				strAllChars = strAllChars + c1;
-				strCount = strCount + String.valueOf(count);
+		if (p <= 2) {
+			StringBuilder str = new StringBuilder();
+			for (int i : arrayList) {
+				str.append(i);
 			}
+			return Integer.parseInt(str.toString());
 		}
-		return strCount;
-	}
 
-	public String shortenNumber(String str) {
-		String shortenString = "";
-		if (str.length() >= 2) {
-			int int1 = Integer.parseInt(String.valueOf(str.toCharArray()[0]));
-			int int2 = Integer.parseInt(String.valueOf(str.toCharArray()[str.length() - 1]));
-			shortenString = String.valueOf(int1 + int2) + shortenNumber(str.substring(1, str.length() - 1));
-		} else {
-			return str;
+		boolean isOdd = !(p % 2 == 0);
+		int z = isOdd ? 1 : 0;
+		int z1 = isOdd ? 0 : 1;
+		int stop = (p / 2 + z);
 
+		if (isOdd) {
+			arrayList.add(p / 2, 0);
 		}
-		return shortenString;
+
+		System.out.println(arrayList);
+
+		for (int i = 0; i < stop; i++) {
+
+			int k2 = arrayList.get(p - i - z1);
+
+			int k1 = arrayList.get(i);
+
+			System.out.println("k1=" + k1 + " , " + "k2=" + k2);
+			int k = k1 + k2;
+			kList.add(k);
+		}
+
+		System.out.println("kList=" + kList);
+		System.out.println("----------------------------");
+
+		return calc(kList);
+
 	}
 
-	public String rekurzija(String ime1, String ime2) {
-		String shortString = countChars(ime1, ime2);
-		String output = shortString;
-		do {
-			output = output + "\n";
-			shortString = shortenNumber(shortString);
-			if (shortString.length() == 2) {
-				output = output + "\n";
-			}
-			output = output + shortString;
-		} while (shortString.length() > 2);
-		output = output + "%";
-		return output;
 
-	}
 
 }

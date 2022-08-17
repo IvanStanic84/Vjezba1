@@ -9,8 +9,8 @@ public class LjubavniKalk {
 
 	public static void main(String[] args) {
 
-		String ime1 = "marta";//JOptionPane.showInputDialog("Unesi prvo ime");
-		String ime2 = "manuel";//JOptionPane.showInputDialog("Unesi drugo ime");
+		String ime1 = "marta";// JOptionPane.showInputDialog("Unesi prvo ime");
+		String ime2 = "manuel";// JOptionPane.showInputDialog("Unesi drugo ime");
 		String ime12 = ime1 + ime2;
 
 		int k = 0;
@@ -46,6 +46,21 @@ public class LjubavniKalk {
 
 	private static Integer calc(List<Integer> arrayList) {
 
+		int t = arrayList.size();
+		for (int z = 0; z < t; z++) {
+
+			int w = arrayList.get(z);
+			if (w > 9) {
+				
+				arrayList.add(z - 2, 1);
+				arrayList.set(z - 1, w % 10);
+
+			}
+
+			System.out.println(w);
+
+		}
+
 		List<Integer> kList = new ArrayList<>();
 		int p = arrayList.size();
 
@@ -68,30 +83,11 @@ public class LjubavniKalk {
 
 		System.out.println(arrayList);
 
-		for (int i = 0; i < p; i++) {
-
-			int k = arrayList.get(i);
-
-			if (k > 9) {
-				k = k % 10;
-				arrayList.set(i - 1, arrayList.get(p - i - z1) + 1);
-			}
-
-		}
-
 		for (int i = 0; i < stop; i++) {
 
 			int k2 = arrayList.get(p - i - z1);
 
-			if (k2 > 9) {
-				k2 = k2 % 10;
-				arrayList.set(i - 1, arrayList.get(p - i - z1) + 1);
-			}
 			int k1 = arrayList.get(i);
-			if (k1 > 9) {
-				k1 = k1 % 10;
-				arrayList.set(i - 1, arrayList.get(i - 1) + 1);
-			}
 
 			System.out.println("k1=" + k1 + " , " + "k2=" + k2);
 			int k = k1 + k2;
