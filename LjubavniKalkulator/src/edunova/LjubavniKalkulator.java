@@ -1,76 +1,71 @@
 package edunova;
 
+import javax.swing.JOptionPane;
+
 public class LjubavniKalkulator {
-	public static void main(String[] args) {
+	public static int izracunaj(String niz) {
 
-		String ime1 = "marta";
-		String ime2 = "manuel";
-		String ime12 = ime1 + ime2;
-
-		int k = 0;
-		int[] niz = new int[ime12.length()];
-		System.out.println(ime1 + "   " + ime2);
-		for (int i = 0; i < ime12.length(); i++) {
-			k = 0;
-			for (int j = 0; j < ime12.length(); j++) {
-				if (ime12.charAt(i) == ime12.charAt(j)) {
-					k++;
-				}
-			}
-			niz[i] = k;
-			String str1 = String.valueOf(k + " ");
-			System.out.print(str1);
-
-		}
-		System.out.println();
-
-		if (ime12.length() <= 2) {
-			System.out.println(ime12);
-			// return Integer.parseInt(ime12);
+		if (niz.length() <= 2) {
+			return Integer.parseInt(niz);
 		}
 
-		StringBuilder newime12 = new StringBuilder();
-		final String[] novoime12 = ime12.split("");
-		for (int i = 0, j = novoime12.length - 1; i <= j; i++, j--) {
+		StringBuilder noviNiz = new StringBuilder();
+		String[] nizVrijednosti = niz.split("");
+		for (int i = 0, j = niz.length() - 1; i <= j; i++, j--) {
 			if (i == j) {
-				newime12.append(novoime12[i]);
+				noviNiz.append(nizVrijednosti[i]);
 				break;
 			}
-			newime12.append(Integer.parseInt(novoime12[i]) + Integer.parseInt(novoime12[j]));
-			System.out.println();
-			System.out.println();
+			noviNiz.append(Integer.parseInt(nizVrijednosti[i]) + Integer.parseInt(nizVrijednosti[j]));
 
 		}
+
+		System.out.println(noviNiz);
+		return izracunaj(noviNiz.toString());
+
+	}
+
+	public static String ucitajString(String poruka) {
+		String s;
+		while (true) {
+			s = JOptionPane.showInputDialog(poruka);
+			if (s.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Obavezan unos");
+				continue;
+			}
+			return s;
+		}
+	}
+
+	public LjubavniKalkulator() {
+		String ime1 = ucitajString("Unesi prvo ime");
+		String ime2 = ucitajString("Unesi drugo ime");
+
+		System.out.printf("%s %8s%n", ime1, ime2);
+
+		String zbrojImena = ime1.trim().toLowerCase() + ime2.trim().toLowerCase();
+		StringBuilder zbroj = new StringBuilder();
+
+		int brojac;
+
+		for (int i = 0; i < zbrojImena.length(); i++) {
+			brojac = 0;
+			for (int j = 0; j < zbrojImena.length(); j++) {
+				if (zbrojImena.charAt(i) == zbrojImena.charAt(j)) {
+					brojac++;
+				}
+			}
+			zbroj.append(brojac);
+		}
+
+		System.out.println(zbroj);
+		izracunaj(zbroj.toString());
+
+	}
+
+	public static void main(String[] args) {
+
+		new LjubavniKalkulator();
+
 	}
 }
-
-/*
- * private int rekurzija(final String ime12) { if (ime12.length() <= 2) { return
- * Integer.parseInt(ime12); }
- * 
- * StringBuilder newime12 = new StringBuilder(); final String[] novoime12 =
- * ime12.split(""); for (int i = 0, j = novoime12.length - 1; i <= j; i++, j--)
- * { if (i == j) { newime12.append(novoime12[i]); break; }
- * newime12.append(Integer.parseInt(novoime12[i]) +
- * Integer.parseInt(novoime12[j])); }
- * 
- * return rekurzija(novoime12.toString()); } }
- * 
- * /* for (k = ime12.length() / 2; k > 2; k--) {
- * 
- * if (ime12.length() % 2 == 0) { for (int i = 0; i < ime12.length() / 2; i++) {
- * int prvibroj = niz[i]; int drugibroj = niz[ime12.length() - 1 - i]; int
- * rezultat = prvibroj + drugibroj; System.out.print(rezultat + " ");
- * System.out.println();
- * 
- * } } else { for (int i = 0; i < ime12.length() / 2; i++) { int prvibroj =
- * niz[i]; int drugibroj = niz[ime12.length() - 1 - i]; int rezultat = prvibroj
- * + drugibroj; System.out.print(rezultat + " ");
- * 
- * } int srednjibroj = niz[ime12.length() / 2]; System.out.print(srednjibroj);
- * System.out.println();
- * 
- * } } }
- * 
- * }
- */
