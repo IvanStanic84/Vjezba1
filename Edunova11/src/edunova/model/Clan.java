@@ -5,6 +5,16 @@ public class Clan extends Entitet {
 	private Grupa grupa;
 	private Polaznik polaznik;
 
+	public Clan() {
+		super();
+	}
+
+	public Clan(Integer sifra, Grupa grupa, Polaznik polaznik) {
+		super(sifra);
+		this.grupa = grupa;
+		this.polaznik = polaznik;
+	}
+
 	public Grupa getGrupa() {
 		return grupa;
 	}

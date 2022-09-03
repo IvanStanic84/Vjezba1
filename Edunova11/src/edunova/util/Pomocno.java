@@ -64,6 +64,19 @@ public class Pomocno {
 		}
 	}
 
+	public static String ucitajString(String poruka, boolean prazno) {
+		String s;
+		while (true) {
+			System.out.print(poruka + ": ");
+			s = ulaz.nextLine();
+			if (!prazno && s.trim().isEmpty()) {
+				System.out.println("Obavezan unos");
+				continue;
+			}
+			return s;
+		}
+	}
+
 	/**
 	 * https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
 	 * 
