@@ -1,6 +1,5 @@
-package edunova;
+package edunovaeclipse;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -10,21 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.google.gson.ExclusionStrategy;
-import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 
-import edunova.model.Clan;
-import edunova.model.Grupa;
-import edunova.model.Polaznik;
-import edunova.model.Predavac;
-import edunova.model.Smjer;
-import edunova.util.GrupaCRUD;
-import edunova.util.Pomocno;
-import edunova.util.SmjerCRUD;
+import edunovaeclipse.model.Clan;
+import edunovaeclipse.model.Grupa;
+import edunovaeclipse.model.Polaznik;
+import edunovaeclipse.model.Predavac;
+import edunovaeclipse.model.Smjer;
+import edunovaeclipse.util.GrupaCRUD;
+import edunovaeclipse.util.Pomocno;
+import edunovaeclipse.util.SmjerCRUD;
 
 public class Start {
 
@@ -197,6 +191,7 @@ public class Start {
 
 	private void procitajSDiska() {
 		Gson g = new Gson();
+	
 		Type dataType = (new TypeToken<Spremanje>() {
 		}).getType();
 
