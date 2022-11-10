@@ -1,4 +1,5 @@
 package edunova;
+
 import java.util.Date;
 
 public class Racunalo {

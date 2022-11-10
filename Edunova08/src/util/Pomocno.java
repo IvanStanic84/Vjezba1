@@ -1,62 +1,69 @@
 package util;
 
+
 import javax.swing.JOptionPane;
 
 public class Pomocno {
-
+	
+	
+	
 	/**
-	 * Metoda osigurava unos cjelog broja koji moûe biti u cijelom rasponu int tip
-	 * podatka
-	 * 
+	 * Metoda osigurava unos cjelog broja
+	 * koji mo≈æe biti u cijelom rasponu
+	 * int tip podatka
 	 * @param poruka Koja se prikazuje korisniku
-	 * @return UËitani cjeli broj
+	 * @return Uƒçitani cjeli broj
 	 */
 	public static int ucitajInt(String poruka) {
-		while (true) {
+		while(true) {
 			try {
-				return Integer.parseInt(JOptionPane.showInputDialog(poruka));
+				return Integer.parseInt(
+						JOptionPane
+						.showInputDialog(poruka));
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Niste unijeli cijeli broj");
+				JOptionPane.showMessageDialog(null,
+						"Niste unijeli cijeli broj");
 			}
 		}
 	}
-
+	
 	public static String ucitajString(String poruka) {
 		String s;
-		while (true) {
+		while(true) {
 			s = JOptionPane.showInputDialog(poruka);
-			if (s.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Obavezan unos");
+			if(s.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, 
+						"Obavezan unos");
 				continue;
 			}
 			return s;
 		}
 	}
-
+	
 	public static int ucitajInt(String poruka, boolean pozitivni) {
 		int i = ucitajInt(poruka);
-		if (!pozitivni) {
+		if(!pozitivni) {
 			return i;
 		}
-		while (true) {
-			if (i < 0) {
-				JOptionPane.showMessageDialog(null, "UËitani broj mora biti pozitivan");
-				i = ucitajInt(poruka);
+		while(true) {
+			if(i<0) {
+				JOptionPane.showMessageDialog(null, 
+						"Uƒçitani broj mora biti pozitivan");
+				i=ucitajInt(poruka);
 				continue;
 			}
 			return i;
 		}
 	}
-
+	
 	/**
 	 * https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
-	 * 
 	 * @param min
 	 * @param max
 	 * @return
 	 */
 	public static int slucajniBroj(int min, int max) {
-		return min + (int) (Math.random() * ((max - min) + 1));
+		return min + (int)(Math.random() * ((max - min) + 1));
 	}
 
 }

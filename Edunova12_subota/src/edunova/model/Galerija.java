@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Galerija {
-
+	
 	private String naziv;
 	private List<GalerijaSlika> slike = new ArrayList<>();
 
 	private List<Mjesto> mjesta = new ArrayList<>();
-
+	
 	public String getNaziv() {
 		return naziv;
 	}
@@ -33,5 +33,7 @@ public class Galerija {
 	public void setMjesta(List<Mjesto> mjesta) {
 		this.mjesta = mjesta;
 	}
+	
+	
 
 }

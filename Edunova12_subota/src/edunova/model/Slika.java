@@ -3,7 +3,7 @@ package edunova.model;
 public class Slika {
 
 	private String putanja;
-
+	
 	public Slika() {
 	}
 
@@ -18,5 +18,6 @@ public class Slika {
 	public void setPutanja(String putanja) {
 		this.putanja = putanja;
 	}
-
+	
+	
 }

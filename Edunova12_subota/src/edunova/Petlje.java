@@ -11,14 +11,15 @@ public class Petlje {
 	}
 
 	private void primjer3() {
-		vanjska: for (int i = 0; i < 10; i++) {
+		vanjska:
+		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				// usluèaju j=7 prekini vanjsku petlju
-				if (j == 7) {
-					break vanjska;
-				}
+					// usluÄaju j=7 prekini vanjsku petlju
+					if (j==7) {
+						break vanjska;
 			}
 		}
+	}
 
 	}
 

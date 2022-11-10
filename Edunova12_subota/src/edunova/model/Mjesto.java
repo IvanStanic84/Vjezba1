@@ -1,8 +1,11 @@
 package edunova.model;
 
-public class Mjesto {
 
+public class Mjesto {
+	
 	private String naziv;
+	
+	
 
 	public Mjesto() {
 		super();
@@ -20,5 +23,9 @@ public class Mjesto {
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
 	}
+	
+	
+	
+	
 
 }
